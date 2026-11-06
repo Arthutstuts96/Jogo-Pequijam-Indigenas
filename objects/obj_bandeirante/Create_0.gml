@@ -9,10 +9,13 @@ vel_y = 0;
 dist_max = 400
 angulo_max = 15
 dir_olhar = 270;
+no_raio = false;
 
 comecar_a_seguir_player = function() {
 	path_end();
+	audio_play_sound(som_bandeirante_encontrou, 9, false);
 	seguir_player = true;
 }
 
 morto = false;
+player_morto = false;

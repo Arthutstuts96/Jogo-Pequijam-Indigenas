@@ -1,0 +1,1 @@
+audio_play_sound(som_chuva, 1, true);

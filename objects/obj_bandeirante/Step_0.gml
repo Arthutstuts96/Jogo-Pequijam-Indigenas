@@ -1,7 +1,7 @@
 if(!morto) {
 	// ===== MOVIMENTAÇÃO E SEGUIR JOGADOR
-	if(distance_to_object(obj_player) < 40) {
-	comecar_a_seguir_player();
+	if(distance_to_object(obj_player) < 40 && !seguir_player) {
+		comecar_a_seguir_player();
 	}
 
 	if(seguir_player) {
@@ -13,7 +13,7 @@ if(!morto) {
 	}
 
 	// ===== CONE DE VISÃO
-	if(point_distance(x, y, obj_player.x, obj_player.y) < dist_max) {
+	if(!seguir_player && point_distance(x, y, obj_player.x, obj_player.y) < dist_max) {
 		var _angulo_2 = point_direction(x, y, obj_player.x, obj_player.y);
 	
 		if(abs(angle_difference(dir_olhar, _angulo_2)) < angulo_max) {
@@ -24,7 +24,8 @@ if(!morto) {
 	}
 	
 	// ===== MATAR O PLAYER
-	if(place_meeting(x, y, obj_player)) {
+	if(place_meeting(x, y, obj_player) && !player_morto) {
+		player_morto = true;
 		obj_player.mudar_estado_morto();
 	}
 } else {

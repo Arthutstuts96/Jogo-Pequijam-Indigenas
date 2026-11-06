@@ -14,7 +14,6 @@ var _esquerda = keyboard_check(ord("A"));
 var _direita = keyboard_check(ord("D"));
 var _cima = keyboard_check(ord("W"));
 var _baixo = keyboard_check(ord("S"));
-var _soltar_camera = keyboard_check(ord("E")); 
 var _dash = keyboard_check_pressed(vk_space);
 var _atacar = keyboard_check_pressed(ord("R"));
 
@@ -24,6 +23,8 @@ var _dir_horizontal = _direita - _esquerda;
 var _dir_vertical = _baixo - _cima;
 
 var _escondida = place_meeting(x, y, obj_grama);
+
+// trocar_sprites(_esquerda, _direita, _cima, _baixo);
 
 // ===== MÁQUINA DE ESTADOS
 switch(estado_atual) {
@@ -46,10 +47,11 @@ switch(estado_atual) {
 			vel_horizontal = lengthdir_x(velocidade, _direcao);
 			vel_vertical = lengthdir_y(velocidade, _direcao);
 		} else {
+			audio_stop_sound(som_andar);
 			mudar_estado_parado();
 		}
-		
 		if(_dash && cooldown_dash_atual <= 0 && !_escondida) {
+			audio_stop_sound(som_andar);
 			mudar_estado_dash(_dir_horizontal, _dir_vertical);
 		}
 		
@@ -82,6 +84,7 @@ switch(estado_atual) {
 			with(obj_bandeirante) {
 				path_start(caminho_bandeirante, velocidade_direcao, path_action_reverse, false);
 				seguir_player = false;
+				player_morto = false;
 			}
 		}
 		break;
@@ -108,16 +111,16 @@ var _inimigo_mais_proximo = TargetingHelper.get_nearest(x, y, 300, obj_bandeiran
 if (_inimigo_mais_proximo != noone && _inimigo_mais_proximo.morto != true) {
 	if(cooldown_ataque_atual <= 0) {
 	    _inimigo_mais_proximo.image_blend = c_red;
-		draw_text(x, y, "sexo?");
     
 	    if (_atacar) {
+			audio_play_sound(som_apunhalada, 9, false);	
 			cooldown_ataque_atual = cooldown_ataque;
 		    var _direcao = point_direction(_inimigo_mais_proximo.x, _inimigo_mais_proximo.y, x, y);
 		    x = _inimigo_mais_proximo.x + lengthdir_x(60, _direcao);
 		    y = _inimigo_mais_proximo.y + lengthdir_y(60, _direcao);
         
 		    vel_horizontal = 0;
-		    vel_vertical = 0;
+		    vel_vertical = 0; 
 		
 			with (_inimigo_mais_proximo) {
 				image_blend = c_white;
@@ -126,7 +129,7 @@ if (_inimigo_mais_proximo != noone && _inimigo_mais_proximo.morto != true) {
 		        path_end();
 				morto = true;			
 		    }
-		} 
+		}
 	}
 } else {
 	if(instance_exists(obj_bandeirante)) {
