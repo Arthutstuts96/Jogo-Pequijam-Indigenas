@@ -10,8 +10,8 @@
   "name":"obj_raoni",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objetos",
-    "path":"folders/Objetos.yy",
+    "name":"NPCs",
+    "path":"folders/Objetos/NPCs.yy",
   },
   "parentObjectId":null,
   "persistent":false,

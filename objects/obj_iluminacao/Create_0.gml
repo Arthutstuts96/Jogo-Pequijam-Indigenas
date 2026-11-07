@@ -1,2 +1,0 @@
-lightsurface = -1;
-

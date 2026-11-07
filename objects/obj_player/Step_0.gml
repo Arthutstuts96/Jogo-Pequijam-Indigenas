@@ -9,6 +9,7 @@
 	https://www.youtube.com/watch?v=KOI1j_BmJJE&t=1s
 	https://www.youtube.com/watch?v=zO20mhMc-8g&t=6s
 */
+depth = -y - sprite_height / 2;
 // ===== TECLAS E DIREÇÕES
 var _esquerda = keyboard_check(ord("A"));
 var _direita = keyboard_check(ord("D"));
