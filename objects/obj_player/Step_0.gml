@@ -82,6 +82,8 @@ switch(estado_atual) {
 			instance_create_layer(2206, 1272, "Instances", obj_player);
 			
 			with(obj_bandeirante) {
+				x = x_original;
+				y = y_original;
 				path_start(caminho_bandeirante, velocidade_direcao, path_action_reverse, false);
 				seguir_player = false;
 				player_morto = false;
