@@ -8,6 +8,16 @@ enum ESTADOS {
 
 estado_atual = ESTADOS.IDLE
 
+// ===== EXIBIR COMANDOS DO JOGO
+exibir_comandos = false;
+comandos = [
+	"E - Chama a sua coruja para olhar ao redor",
+	"Espaço - Fazer um rolamento",
+	"R (perto de um inimigo) - Ataca furtivamente",
+	"C - Ver inimigos próximos",
+];
+lightsurface = -1;
+
 // ===== MOVIMENTAÇÃO
 velocidade = 8;
 vel_horizontal = 0;

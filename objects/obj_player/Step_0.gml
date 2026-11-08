@@ -9,6 +9,7 @@
 	https://www.youtube.com/watch?v=KOI1j_BmJJE&t=1s
 	https://www.youtube.com/watch?v=zO20mhMc-8g&t=6s
 */
+depth = -y - sprite_height / 2;
 // ===== TECLAS E DIREÇÕES
 var _esquerda = keyboard_check(ord("A"));
 var _direita = keyboard_check(ord("D"));
@@ -82,6 +83,8 @@ switch(estado_atual) {
 			instance_create_layer(2206, 1272, "Instances", obj_player);
 			
 			with(obj_bandeirante) {
+				x = x_original;
+				y = y_original;
 				path_start(caminho_bandeirante, velocidade_direcao, path_action_reverse, false);
 				seguir_player = false;
 				player_morto = false;

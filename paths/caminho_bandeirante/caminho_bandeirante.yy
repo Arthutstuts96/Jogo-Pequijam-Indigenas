@@ -5,8 +5,8 @@
   "kind":0,
   "name":"caminho_bandeirante",
   "parent":{
-    "name":"Pequijam Returns",
-    "path":"Pequijam Returns.yyp",
+    "name":"Caminhos",
+    "path":"folders/Caminhos.yy",
   },
   "points":[
     {"speed":100.0,"x":207.90154,"y":397.8062,},

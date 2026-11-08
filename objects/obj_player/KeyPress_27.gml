@@ -1,0 +1,1 @@
+exibir_comandos = !exibir_comandos;

@@ -1,4 +1,6 @@
 // ===== MOVIMENTAÇÃO
+x_original = x;
+y_original = y;
 path_start(caminho_bandeirante, velocidade_direcao, path_action_reverse, false);
 seguir_player = false;
 velocidade = 5;

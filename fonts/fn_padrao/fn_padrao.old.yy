@@ -203,7 +203,7 @@
     "253":{"character":253,"h":23,"offset":-1,"shift":8,"w":9,"x":205,"y":52,},
     "254":{"character":254,"h":23,"offset":0,"shift":9,"w":8,"x":216,"y":52,},
     "255":{"character":255,"h":23,"offset":-1,"shift":7,"w":9,"x":24,"y":202,},
-    "9647":{"character":9647,"h":23,"offset":2,"shift":16,"w":10,"x":35,"y":202,},
+    "9647":{"character":9647,"h":23,"offset":3,"shift":16,"w":10,"x":35,"y":202,},
   },
   "hinting":0,
   "includeTTF":false,
@@ -215,8 +215,8 @@
   "maintainGms1Font":false,
   "name":"fn_padrao",
   "parent":{
-    "name":"Pequijam Returns",
-    "path":"Pequijam Returns.yyp",
+    "name":"Fontes",
+    "path":"folders/Fontes.yy",
   },
   "pointRounding":0,
   "ranges":[
